@@ -11,22 +11,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v2
         with:
-          node-version: "18"
+          version: 6.32.9
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "14"
           cache: "pnpm"
-
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v2.2.4
-        with:
-          version: 8 # 使いたいバージョンを指定
-
-      - name: Install dependencies
-        run: pnpm install
+      - run: pnpm install
+      - run: pnpm test
 
       - name: Create a new changeset (optional)
         run: pnpx changeset add
