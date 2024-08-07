@@ -10,10 +10,7 @@
   "dependencies": {
     "luxon": "3.5.0"
   },
-  "pnpm": {
-    "overrides": {
-      "nx": "19.5.1"
-    }
-  },
-  "devDependencies": {}
+  "devDependencies": {
+    "@types/luxon": "^3.4.2"
+  }
 }
