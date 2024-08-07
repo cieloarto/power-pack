@@ -1,0 +1,19 @@
+{
+  "name": "@earthlink/date-time",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest"
+  },
+  "dependencies": {
+    "luxon": "3.5.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "nx": "19.5.1"
+    }
+  },
+  "devDependencies": {}
+}
