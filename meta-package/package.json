@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": false,
   "dependencies": {
-    "@power-utils/date-time": "workspace:*",
-    "@power-utils/string-utils": "workspace:*"
+    "@earthlink/date-time": "workspace:*",
+    "@earthlink/string-utils": "workspace:*"
   }
 }
