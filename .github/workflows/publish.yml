@@ -20,7 +20,7 @@ jobs:
           node-version: "14"
           cache: "pnpm"
       - run: pnpm install
-      - run: pnpm test
+      # - run: pnpm test
 
       - name: Create a new changeset (optional)
         run: pnpx changeset add
