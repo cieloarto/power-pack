@@ -3,7 +3,7 @@ name: Publish Packages
 on:
   push:
     branches:
-      - main # Change this to your main branch
+      - main # 変更がプッシュされるブランチを指定
 
 jobs:
   release:
@@ -19,6 +19,9 @@ jobs:
         with:
           node-version: "18"
           cache: "pnpm"
+
+      - name: Install pnpm
+        run: npm install -g pnpm
 
       - name: Install dependencies
         run: pnpm install
