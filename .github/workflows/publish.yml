@@ -1,0 +1,41 @@
+name: Publish Packages
+
+on:
+  push:
+    branches:
+      - main # Change this to your main branch
+
+jobs:
+  release:
+    name: Release and Publish Packages
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Create a new changeset (optional)
+        run: pnpx changeset add
+
+      - name: Commit changeset (optional)
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "ci(changeset): create changeset"
+
+      - name: Version and Publish
+        run: |
+          pnpx changeset version
+          pnpm publish -r --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
