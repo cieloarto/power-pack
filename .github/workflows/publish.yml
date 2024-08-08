@@ -22,11 +22,11 @@ jobs:
       - run: pnpm install
       # - run: pnpm test
 
-      - name: Generate a changeset if there are changes
-        run: |
-          if [ "$(git diff --name-only | grep -E 'src/')" ]; then
-            echo "---\n'package-name': patch" | pnpx changeset add
-          fi
+      # - name: Generate a changeset if there are changes
+      #   run: |
+      #     if [ "$(git diff --name-only | grep -E 'src/')" ]; then
+      #       echo "---\n'package-name': patch" | pnpx changeset add
+      #     fi
 
       - name: Bump version and publish
         run: |
