@@ -7,6 +7,10 @@
     "build": "tsc",
     "test": "jest"
   },
-  "dependencies": {},
-  "devDependencies": {}
+  "dependencies": {
+    "crypto": "^1.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.1.0"
+  }
 }
