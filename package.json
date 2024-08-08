@@ -1,5 +1,11 @@
 {
-  "scripts": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "changeset:add": "changeset add",
+    "changeset:version": "changeset version",
+    "c:a": "changeset add",
+    "c:v": "changeset version"
+  },
   "dependencies": {
     "@types/jest": "^29.5.12",
     "jest": "^29.7.0",
