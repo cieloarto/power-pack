@@ -32,6 +32,13 @@ jobs:
           git add .
           git commit -m "ci(changeset): create changeset"
 
+      - name: Generate changeset if needed
+        run: |
+          # ここに自動生成スクリプトの呼び出しを追加
+          if [ "$(git diff --name-only | grep -E 'src/')" ]; then
+            pnpx changeset add --empty
+          fi
+
       - name: Bump version and publish
         run: |
           pnpx changeset version
